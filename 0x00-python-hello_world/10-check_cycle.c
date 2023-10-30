@@ -14,16 +14,14 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *s, *f;
+	listint_t *slow, *fast;
 
 	if (!(list && list->next && list->next->next))
 		return (0);
-	s = list->next, f = list->next->next;
-	if (s->n == list->n || f->n == s->n || f->n == list->n)
-		return (1); /* Attempting to avoid the loop */
 
-	for (; f != NULL; s = s->next, f = f->next->next)
-		if (s->n == f->n)
+	slow = list->next, fast = list->next->next;
+	for (; fast && fast->next; slow = slow->next, fast = fast->next->next)
+		if (slow->n == fast->n)
 			return (1);
 	return (0);
 }
