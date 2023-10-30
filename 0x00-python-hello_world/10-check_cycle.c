@@ -18,12 +18,12 @@ int check_cycle(listint_t *list)
 
 	if (!(list && list->next && list->next->next))
 		return (0);
-	for (s = list->next, f = list->next->next; f != NULL;)
-	{
+	s = list->next, f = list->next->next;
+	if (s->n == list->n || f->n == s->n || f->n == list->n)
+		return (1); /* Attempting to avoid the loop */
+
+	for (; f != NULL; s = s->next, f = f->next->next)
 		if (s->n == f->n)
 			return (1);
-		s = s->next;
-		f = f->next->next;
-	}
 	return (0);
 }
