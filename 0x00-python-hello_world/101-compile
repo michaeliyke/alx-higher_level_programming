@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Compile $PYFILE
+python3 -c "import py_compile as pyc; pyc.compile(\"$PYFILE\")"
+
+# Get the base filename of $PYFILE
+filename="${PYFILE##*/}"
+
+# Get the name part excluding the extension
+name="${filename%%.*}"
+
+# Copy the compiled file out from the __pycache__ folder
+cp __pycache__/$name.*.pyc $name.pyc

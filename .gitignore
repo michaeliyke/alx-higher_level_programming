@@ -6,6 +6,8 @@ c.c
 hsh
 allowed_functions
 test/*.out
+__pycache__
+*.pyc
 d
 bug
 tm
