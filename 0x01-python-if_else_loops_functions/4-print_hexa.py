@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
 for a in range(99):
-    print("{a:#x}".format(a=a))
+    print("{x} = {a:#x}".format(x=a, a=a))
