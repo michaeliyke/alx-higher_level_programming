@@ -2,4 +2,4 @@
 
 for a in "abcdefghijklmnopqrstuvwxyz":
     if (a != 'e' and a != 'q'):
-        print(a, end="")
+        print("{}".format(a), end="")
