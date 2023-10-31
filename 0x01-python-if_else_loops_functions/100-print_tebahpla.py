@@ -2,5 +2,5 @@
 i = False
 for c in "zyzwvutsrqponmlkjihgfedcba":
     c = c.upper() if i else c
-    print("{}".format(c), end=" ")
+    print("{}".format(c), end="")
     i = not i
