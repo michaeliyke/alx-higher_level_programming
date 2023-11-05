@@ -6,4 +6,4 @@ def print_list_integer(my_list=[]):
         return
     for i in my_list:
         if isinstance(i, int):
-            print(f"{i}")
+            print("{x:d}".format(i)) # print as a number without converting
