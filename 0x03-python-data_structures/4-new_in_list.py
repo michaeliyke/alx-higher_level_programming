@@ -2,8 +2,7 @@
 
 
 def new_in_list(my_list, idx, element):
-    if not my_list:
-        return my_list
+    my_list = [] if not my_list else my_list
     cpy = [i for i in my_list]
     if not isinstance(idx, int):
         return cpy
