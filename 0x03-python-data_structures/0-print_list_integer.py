@@ -6,4 +6,4 @@ def print_list_integer(my_list=[]):
         return
     for i in my_list:
         if type(i) == int:
-            print("{}".format(i))
+            print("{0}".format(i))
