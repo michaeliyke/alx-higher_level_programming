@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+
+if gcc -shared -fPIC -o libPyList.so 100-print_python_list_info.c -I /usr/include/python3.8; then
+  100-test_lists.py
+else
+  echo "Failure!"
+fi

@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-new_in_list = __import__('4-new_in_list').new_in_list
+import ctypes
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_element = 9
-new_list = new_in_list(my_list, idx, new_element)
+lib = ctypes.CDLL("./libPyList.so")
+lib.print_python_list_info.argtypes = [ctypes.py_object]
 
-print(new_list)
-print(my_list)
+l = ["One", "Two", "Three", "Four"]
+
+lib.print_python_list_info(l)
