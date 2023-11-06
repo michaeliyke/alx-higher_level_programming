@@ -1,7 +1,12 @@
 #include "lists.h"
 #include "Python.h"
 
-void hello()
+/**
+ * hello - a hello world excercise function
+ *
+ * Return: void
+ */
+void hello(void)
 {
 	printf("\n\n Hello from C Programming\n\n");
 }
