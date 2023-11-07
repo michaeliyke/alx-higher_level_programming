@@ -1,5 +1,4 @@
-#include "lists.h"
-#include "Python.h"
+#include <Python.h>
 
 /**
  * hello - a hello world excercise function
