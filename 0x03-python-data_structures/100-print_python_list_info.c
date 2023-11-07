@@ -31,14 +31,13 @@ void hello(void)
  * lib.printlist(l)
  */
 void print_python_list_info(PyObject *p)
-{
+{			    /* list->ob_base.ob_base.ob_type->tp_name, */
 	PyListObject *list; /* Base of all python objects, to be casted */
 	Py_ssize_t i;	    /* Just the regular ssize_t which is signed long int */
 
 	list = (PyListObject *)p;
 	printf(
-	    "[*] Size of the Python %s = %ld\n",
-	    list->ob_base.ob_base.ob_type->tp_name,
+	    "[*] Size of the Python List = %ld\n",
 	    list->ob_base.ob_size);
 	printf("[*] Allocated = %ld\n", list->allocated);
 	for (i = 0; i < list->ob_base.ob_size; i++)
