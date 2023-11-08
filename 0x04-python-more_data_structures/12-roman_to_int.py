@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 bv = {
     1: "I", 4: "IV", 5: "V", 9: "IX", 10: "X", 40: "XL", 50: "L",
     90: "XC", 100: "C", 400: "CD", 500: "D", 900: "CM", 1000: "M",
@@ -9,6 +11,7 @@ bv = {
     "XC": 90, "C": 100, "CD": 400, "D": 500, "CM": 900, "M": 1000,
     }
 
+
 # I, X, C, M
 def thousands(s):
     count = 0
@@ -18,6 +21,7 @@ def thousands(s):
         count += 1
     return count
 
+
 def hundredths(s):
     count = 0
     for i in s:
@@ -25,6 +29,7 @@ def hundredths(s):
             break
         count += 1
     return count
+
 
 def tens(s):
     count = 0
@@ -68,7 +73,7 @@ def roman_to_int(rs):
         rs = rs[2:]
         total += 400
 
-    #TODO: collect 100s
+    # TODO: collect 100s
     count = hundredths(rs)
     total += 100 * count
     rs = rs[count:]
@@ -88,7 +93,7 @@ def roman_to_int(rs):
         rs = rs[2:]
         total += 40
 
-    #TODO: collect 10s
+    # TODO: collect 10s
     count = tens(rs)
     total += 10 * count
     rs = rs[count:]
@@ -108,7 +113,7 @@ def roman_to_int(rs):
         rs = rs[2:]
         total += 4
 
-    #TODO:  collect 1s
+    # TODO:  collect 1s
     count = units(rs)
     total += 1 * count
     rs = rs[count:]
