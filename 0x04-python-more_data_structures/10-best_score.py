@@ -3,7 +3,8 @@
 
 def best_score(a_dictionary):
     """returns a key with the biggest integer value"""
-    if not a_dictionary: return None
+    if not a_dictionary:
+        return None
     keys = list(a_dictionary.keys())
     b_key = keys[0]
     biggest = a_dictionary.get(b_key)
