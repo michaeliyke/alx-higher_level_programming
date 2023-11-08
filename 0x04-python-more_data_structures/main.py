@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-square_matrix_simple = __import__('0-square_matrix_simple').square_matrix_simple
+square_matrix_simple = __import__('0-square_matrix_simple')\
+    .square_matrix_simple
 
 matrx = [
     [1, 2, 3],
@@ -10,4 +11,3 @@ matrx = [
 new_matrix = square_matrix_simple(matrx)
 print(new_matrix)
 print(matrx)
-
