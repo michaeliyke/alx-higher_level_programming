@@ -52,6 +52,9 @@ def units(s):
 def roman_to_int(rs):
     """converts a Roman numeral to an integer"""
 
+    if not isinstance(rs, str):
+        return 0
+
     total = 0
     # collect 1000s
     count = thousands(rs)
