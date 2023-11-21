@@ -16,6 +16,8 @@ def list_division(L1, L2, lnth):
         except TypeError:
             print("wrong type")
             r = 0
+        except Exception:
+            r = 0
         finally:
             arr.append(float(r) if r != 0 else r)
     return arr
