@@ -3,10 +3,7 @@
 
 class Square:
     """
-    Class Square details
-
-    Attributes:
-        size (int): private instance attribute
+    The base Square type
     """
 
     def __init__(self, size):

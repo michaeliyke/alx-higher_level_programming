@@ -2,6 +2,7 @@
 
 
 class Square:
-    """The Square class
+    """
+    The base Square type
     """
     pass

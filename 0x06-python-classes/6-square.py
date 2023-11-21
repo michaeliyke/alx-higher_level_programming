@@ -3,7 +3,7 @@
 
 class Square:
     """
-    The Square type
+    The base Square type
     """
 
     def __init__(self, size=0, position=(0, 0)):
