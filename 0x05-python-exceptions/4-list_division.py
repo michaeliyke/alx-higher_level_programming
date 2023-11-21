@@ -19,5 +19,5 @@ def list_division(L1, L2, lnth):
         except Exception:
             r = 0
         finally:
-            arr.append(float(r) if r != 0 else r)
+            arr.append(float(r))
     return arr
