@@ -3,6 +3,6 @@
 
 class Square:
     """
-    The base Square type
+    The base Square type. This is the constructor of the square objects
     """
     pass
