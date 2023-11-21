@@ -2,14 +2,14 @@
 
 
 def safe_print_division(a, b):
-    r = None
     try:
         r = a / b
-    except Exception:
-        pass
+    except ZeroDivisionError:
+        r = None
     finally:
-        if r:
-            print("Inside result: {:.1f}".format(r))
+        prefix = "Inside result"
+        if r == None:
+            print("{}: {}".format(prefix, r))
         else:
-            print("Inside result {}".format(r))
-    return r
+            print("{}: {:.1f}".format(prefix, r))
+        return r
