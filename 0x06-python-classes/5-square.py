@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""The Square module. This module introduces the Square class and family
+"""
 
 
 class Square:
@@ -7,11 +9,14 @@ class Square:
     """
 
     def __init__(self, size=0):
-        """
-        Instantiation work happens here
+        """instantiation
 
         Args:
-            size (int): size of square sides
+            size (int, optional): size of the sides. Defaults to 0.
+
+        Raises:
+            TypeError: must be integer
+            ValueError: must be real number
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -22,15 +27,23 @@ class Square:
 
     @property
     def size(self):
-        """
-        Returns the value of __size private instance variable
+        """Returns the value of __size private instance variable
+
+        Returns:
+            int: the size
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        Sets the value of __size instance private variable
+        """Sets the value of __size instance private variable
+
+        Args:
+            value (int): size int
+
+        Raises:
+            TypeError: must be integer
+            ValueError: must be a real number
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -40,13 +53,16 @@ class Square:
         self.__size = value
 
     def area(self):
-        """
-        The area of the square object
+        """The area of the square object
+
+        Returns:
+            int: the area of the square
         """
         return self.__size * self.__size
 
     def my_print(self):
-        """Class print press"""
+        """Class print press
+        """
         if self.size == 0:
             print()
         for ch in range(self.size):
