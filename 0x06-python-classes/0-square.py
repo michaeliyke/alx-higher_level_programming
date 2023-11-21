@@ -2,4 +2,4 @@
 
 
 class Square:
-    """Class Square details"""
+    pass
