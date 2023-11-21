@@ -8,7 +8,7 @@ def list_division(L1, L2, lnth):
             a, b = L1[i], L2[i]
             r = a / b
         except ZeroDivisionError:
-            print("division by zero")
+            print("division by 0")
             r = 0
         except IndexError:
             print("out of range")
@@ -19,5 +19,5 @@ def list_division(L1, L2, lnth):
         except Exception:
             r = 0
         finally:
-            arr.append(float(r))
+            arr.append(float(r) if r != 0 else r)
     return arr
