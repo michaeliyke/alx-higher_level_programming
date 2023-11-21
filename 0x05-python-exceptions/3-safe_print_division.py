@@ -8,7 +8,7 @@ def safe_print_division(a, b):
         r = None
     finally:
         prefix = "Inside result"
-        if r == None:
+        if r is None:
             print("{}: {}".format(prefix, r))
         else:
             print("{}: {:.1f}".format(prefix, r))
