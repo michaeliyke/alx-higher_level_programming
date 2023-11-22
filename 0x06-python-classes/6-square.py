@@ -113,7 +113,7 @@ class Square:
         Returns:
             bool: True if valid and False if not
         """
-        if not isinstance(pos, tuple) or len(pos) == 2:
+        if not isinstance(pos, tuple) or len(pos) != 2:
             return False
         if not isinstance(pos[0], int) or not isinstance(pos[1], int):
             return False
