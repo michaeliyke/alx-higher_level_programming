@@ -115,5 +115,5 @@ class Square:
         if isinstance(pos, tuple) and len(pos) == 2:
             return True
         if isinstance(pos[0], int) and isinstance(pos[1], int):
-            return True
+            return pos[0] >= 0 and pos[1] >= 0
         return False
