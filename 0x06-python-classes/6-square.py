@@ -91,15 +91,14 @@ class Square:
         """Print the square"""
         if self.size == 0:
             print()
+            return
 
         x, y = self.position if self.position else (0, 0)
-        if self.size < 1:
-            return
-        for line in range(y):
+        for _ in range(y):
             print()
 
-        for ch in range(self.size):
-            for space in range(x):
+        for _ in range(self.size):
+            for _ in range(x):
                 print(" ", end="")
             for c in range(self.size):
                 print("#", end="")
