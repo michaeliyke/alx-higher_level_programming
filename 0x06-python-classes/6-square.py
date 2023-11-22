@@ -93,6 +93,8 @@ class Square:
             print()
 
         x, y = self.position if self.position else (0, 0)
+        if self.size < 1:
+            return
         for line in range(y):
             print()
 
