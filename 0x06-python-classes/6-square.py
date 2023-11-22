@@ -23,7 +23,7 @@ class Square:
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
 
-        elif size < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
 
@@ -54,7 +54,7 @@ class Square:
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
 
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
@@ -88,7 +88,7 @@ class Square:
         self.__position = value
 
     def my_print(self):
-        """Class print press"""
+        """Print the square"""
         if self.size == 0:
             print()
 
@@ -114,8 +114,10 @@ class Square:
         Returns:
             bool: True if valid and False if not
         """
-        if isinstance(pos, tuple) and len(pos) == 2:
-            return True
-        if isinstance(pos[0], int) and isinstance(pos[1], int):
-            return pos[0] >= 0 and pos[1] >= 0
-        return False
+        if not isinstance(pos, tuple) or len(pos) == 2:
+            return False
+        if not isinstance(pos[0], int) or not isinstance(pos[1], int):
+            return False
+        if pos[0] < 0 or pos[1] < 0:
+            return False
+        return True
