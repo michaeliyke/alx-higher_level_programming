@@ -98,3 +98,4 @@ test-results/
 # Ignore package manager directories
 vendor/
 node_modules/
+examples/

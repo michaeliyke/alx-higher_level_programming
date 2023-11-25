@@ -1,0 +1,66 @@
+The ``0-add_integer`` module
+=============================
+
+Using ``add_integer``
+---------------------
+
+We first import ``add_integer`` and use it below
+
+>>> add = __import__("0-add_integer").add_integer
+
+>>> add(1, 2)
+3
+
+>>> add(0, 1)
+1
+
+>>> add(0, 0)
+0
+
+>>> add(0, -1)
+-1
+
+>>> add(-1, 2)
+1
+
+>>> add(-1, -9)
+-10
+
+>>> add(100.3, -2)
+98
+
+>>> add(1, 1E300)
+Traceback (most recent call last):
+	...
+OverflowError: b too large
+
+>>> add(2, 5j)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add(2j, 5)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add(2, True)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add(False, 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add("string", 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+
+>>> add(2, "string")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
