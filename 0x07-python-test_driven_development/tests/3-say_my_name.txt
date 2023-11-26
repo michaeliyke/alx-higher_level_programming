@@ -1,0 +1,31 @@
+The ``3-say_my_name`` module
+=============================
+
+Using ``say_my_name``
+---------------------
+
+We first import ``say_my_name`` and use it below
+
+>>> say = __import__("3-say_my_name").say_my_name
+
+>>> say(None)
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+>>> say("Mike", 247)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+>>> say("Michael") # output contains a single trailing white space
+My name is Michael 
+
+>>> say("Michael", "Iyke")
+My name is Michael Iyke
+
+>>> say("") # output contains a single trailing white space
+My name is 
+
+>>> say("", "") # output contains a single trailing white space
+My name is 

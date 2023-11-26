@@ -1,0 +1,44 @@
+The ``5-text_indentation`` module
+=============================
+
+Using ``text_indentation``
+---------------------
+
+We first import ``text_indentation`` and use it below
+
+>>> pf = __import__("5-text_indentation").text_indentation
+
+>>> pf(91) # Covers all non string inputs
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> pf("   Transfer idem ad modestiam vel temperantiam,") # leading spaces
+Transfer idem ad modestiam vel temperantiam,
+
+>>> pf("   Transfer idem ad modestiam vel temperantiam,   ") # trailing spaces
+Transfer idem ad modestiam vel temperantiam,
+
+>>> pf("Transfer idem ad modestiam vel temperantiam,")
+Transfer idem ad modestiam vel temperantiam,
+
+>>> pf("Fortasse id optimum, sed ubi illud.")
+Fortasse id optimum, sed ubi illud.
+<BLANKLINE>
+
+>>> pf("Fortasse id optimum, sed ubi illud?")
+Fortasse id optimum, sed ubi illud?
+<BLANKLINE>
+
+>>> pf("Fortasse id optimum, sed ubi illud:")
+Fortasse id optimum, sed ubi illud:
+<BLANKLINE>
+
+>>> s = "dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur"
+
+>>> pf(s)
+dolor sit amet, consectetur adipiscing elit.
+<BLANKLINE>
+Quonam modo?
+<BLANKLINE>
+Utrum igitur
