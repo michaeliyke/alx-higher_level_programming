@@ -22,6 +22,3 @@ class LockedClass:
         """
         if name == "first_name":
             super().__setattr__(name, value)
-        else:
-            text = "'{}' object has no attribute '{}'"
-            raise AttributeError(text.format(self.__class__.__name__, name))
