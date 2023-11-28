@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def copy_list(l):
-    return l[:] if type(l) is list else l
+def copy_list(list1):
+    return list1[:] if type(list1) is list else list1
