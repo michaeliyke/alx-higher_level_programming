@@ -1,0 +1,48 @@
+The ``0-lookup`` module
+=============================
+
+Using ``lookup``
+---------------------
+
+WE FIRST INCLUDE ``lookup``
+
+0. ---------------------MODULE EXISTS ?---------------------
+
+>>> lkup = __import__("0-lookup_not_there")
+Traceback (most recent call last):
+	...
+ModuleNotFoundError: No module named '0-lookup_not_there'
+>>> lkup = __import__("0-lookup")
+
+1. -------------------MODULE DOCS?--------------------------
+
+>>> type(lkup.__doc__) is str and len(lkup.__doc__.split(" ")) > 1
+True
+
+2. -----------------FUNCTION EXISTS?-------------------------
+
+>>> lkup.find_me_not
+Traceback (most recent call last):
+	...
+AttributeError: module '0-lookup' has no attribute 'find_me_not'
+
+3. ---------------FUNCTION HAS DOCS?-------------------------
+
+>>> lookup = lkup.lookup
+
+>>> type(lookup.__doc__) is str and len(lookup.__doc__.split(" ")) > 1
+True
+
+4. --------------lookup()------------------------------------
+
+dir_list = lookup()
+Traceback (most recent call last):
+  ...
+TypeError: lookup() missing 1 required positional argument: 'obj'
+
+5. -------------lookup(None)---------------------------------
+
+>>> dir_list = lookup(None)
+
+>>> type(dir_list)
+<class 'list'>
