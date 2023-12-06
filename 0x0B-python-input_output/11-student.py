@@ -13,8 +13,8 @@ class Student:
 
     def reload_from_json(self, obj):
         """Replaces all attributes of the Student instance"""
-        for key in obj.keys():
-            self[key] = obj[key]
+        for key, value in obj.items():
+            setattr(self, key, value)
 
     def to_json(self, attrs=None):
         """Retrieves a dictionary representation of a Student instance"""
