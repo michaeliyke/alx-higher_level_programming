@@ -24,6 +24,16 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
+    def to_dictionary(self):
+        """Converts the rectangle object to a dictionary"""
+        return {
+            "x": self.x,
+            "y": self.y,
+            "width": self.width,
+            "height": self.height,
+            "id": self.id,
+        }
+
     def update(self, *args, **kwargs):
         """Updates attributes id, width, height, x and y using args"""
         if not args:
