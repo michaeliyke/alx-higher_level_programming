@@ -16,6 +16,15 @@ class Square(Rectangle):
             self.id, self.x, self.y, self.width
         )
 
+    def to_dictionary(self):
+        """Converts the square object to a dictionary"""
+        return {
+            "x": self.x,
+            "y": self.y,
+            "size": self.size,
+            "id": self.id,
+        }
+
     def update(self, *args, **kwargs):
         """Updates a square object with new values"""
         if not args:
