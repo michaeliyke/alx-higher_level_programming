@@ -20,6 +20,10 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def area(self):
+        """Returns the area value of the Rectangle instance."""
+        return self.width * self.height
+
     def validate(self, name: str, value):
         """Integer validation for width, height, x, y"""
         if type(value) is not int:
