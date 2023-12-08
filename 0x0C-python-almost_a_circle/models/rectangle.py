@@ -20,6 +20,13 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def display(self):
+        """Prints in stdout the Rectangle instance with the character #"""
+        for _ in range(self.height):
+            for _ in range(self.width):
+                print("#", end="")
+            print()
+
     def area(self):
         """Returns the area value of the Rectangle instance."""
         return self.width * self.height
