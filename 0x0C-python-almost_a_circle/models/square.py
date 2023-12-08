@@ -16,6 +16,24 @@ class Square(Rectangle):
             self.id, self.x, self.y, self.width
         )
 
+    def update(self, *args, **kwargs):
+        """Updates a square object with new values"""
+        if not args:
+            props = ("id", "size", "x", "y")
+            for key, value in kwargs.items():
+                if key in props:
+                    setattr(self, key, value)
+            return
+
+        if len(args) > 0:
+            self.id = args[0]
+        if len(args) > 1:
+            self.size = args[1]
+        if len(args) > 2:
+            self.x = args[2]
+        if len(args) > 3:
+            self.y = args[3]
+
     @property
     def size(self):
         """Getting the size of the square"""

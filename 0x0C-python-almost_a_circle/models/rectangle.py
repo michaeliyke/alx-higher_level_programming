@@ -27,9 +27,12 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Updates attributes id, width, height, x and y using args"""
         if not args:
+            props = ("id", "width", "height", "x", "y")
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if key in props:
+                    setattr(self, key, value)
             return
+
         if len(args) > 0:
             self.id = args[0]
         if len(args) > 1:
