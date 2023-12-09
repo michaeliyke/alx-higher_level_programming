@@ -15,6 +15,11 @@ class Base:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
 
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        pass
+
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
