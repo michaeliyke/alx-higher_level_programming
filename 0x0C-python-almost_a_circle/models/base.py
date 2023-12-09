@@ -16,6 +16,18 @@ class Base:
             self.id = self.__class__.__nb_objects
 
     @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances:"""
+        filename = cls.__name__+".json"
+        try:
+            with open(filename, mode="r", encoding="utf-8") as f:
+                arr = Base.from_json_string(f.read())
+                instances = [cls.create(**info) for info in arr]
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set"""
         instance = None
@@ -30,7 +42,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the JSON string representation json_string"""
+        """Returns the list of the JSON string representation json_string"""
         if not json_string:
             return []
         else:
