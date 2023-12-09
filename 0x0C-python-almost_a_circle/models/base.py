@@ -17,8 +17,16 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set"""
-        pass
+        """Returns an instance with all attributes already set"""
+        instance = None
+        if cls.__name__ == "Rectangle":
+            instance = cls(width=5, height=5, x=0, y=0, id=0)
+        elif cls.__name__ == "Square":
+            instance = cls(size=5, x=0, y=0, id=0)
+
+        if isinstance(instance, Base):
+            instance.update(**dictionary)
+        return instance
 
     @staticmethod
     def from_json_string(json_string):
