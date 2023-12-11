@@ -2,6 +2,7 @@
 """Base module"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -15,6 +16,18 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    @classmethod
+    def draw(cls, list_rectangles, list_squares):
+        """Draws with the turtle module"""
+        turtle.bgcolor("black")
+        t = turtle.Turtle()
+        colors = ["red", "dark red"]
+        for num in range(400):
+            t.forward(num+1)
+            t.right(89)
+            t.pencolor(colors[num % 2])
+        turtle.done()
 
     @classmethod
     def load_from_file_csv(cls):
