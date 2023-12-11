@@ -19,37 +19,39 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Reads a list of dicts or Base objects into a csv file"""
-        dicts = []
         try:
             with open(cls.__name__ + ".csv", mode="r", encoding="utf-8") as f:
                 reader = csv.DictReader(f)
-                header = reader.fieldnames
-                if header is None:  # file is empty
+                if reader.fieldnames is None:  # file is empty
                     return []
+                dicts = []
                 for row in reader:
+                    for key, value in row.items():
+                        if value.isdigit():
+                            row[key] = int(value)
                     dicts.append(row)
-
-        except (FileNotFoundError):  # file does not exist
+        except (FileNotFoundError):  # file does not exists
             return []
-        return dicts
+        return [cls.create(**dict_) for dict_ in dicts]
 
     @classmethod
     def save_to_file_csv(cls, list_objs: list):
         """Saves a list of dicts or Base objects into a csv file"""
-        data = []
-        dicts = []
+        dicts, data = [], []
 
         if type(list_objs) is list:
             dicts = [d.to_dictionary() if isinstance(d, Base) else d
                      for d in list_objs]
 
         if cls.__name__ == "Square":
-            data.append(["id", "size", "x", "y"])  # header
+            data = [["id", "size", "x", "y"]]  # header
+            data += [
+                [dic["id"], dic["size"], dic["x"], dic["y"]] for dic in dicts]
         elif cls.__name__ == "Rectangle":
-            data.append(["id", "width", "height", "x", "y"])  # header
-
-        for dict_ in dicts:
-            data.append(dict_.values())
+            data = [["id", "width", "height", "x", "y"]]  # header
+            data += [
+                [dic["id"], dic["width"], dic["height"], dic["x"], dic["y"]]
+                for dic in dicts]
 
         with open(cls.__name__ + ".csv", mode="w", encoding="utf-8") as f:
             writer = csv.writer(f)
