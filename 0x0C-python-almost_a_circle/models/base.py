@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base module"""
 import json
+import csv
 
 
 class Base:
@@ -14,6 +15,45 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Reads a list of dicts or Base objects into a csv file"""
+        dicts = []
+        try:
+            with open(cls.__name__ + ".csv", mode="r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                header = reader.fieldnames
+                if header is None:  # file is empty
+                    return []
+                for row in reader:
+                    dicts.append(row)
+
+        except (FileNotFoundError):  # file does not exist
+            return []
+        return dicts
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs: list):
+        """Saves a list of dicts or Base objects into a csv file"""
+        data = []
+        dicts = []
+
+        if type(list_objs) is list:
+            dicts = [d.to_dictionary() if isinstance(d, Base) else d
+                     for d in list_objs]
+
+        if cls.__name__ == "Square":
+            data.append(["id", "size", "x", "y"])  # header
+        elif cls.__name__ == "Rectangle":
+            data.append(["id", "width", "height", "x", "y"])  # header
+
+        for dict_ in dicts:
+            data.append(dict_.values())
+
+        with open(cls.__name__ + ".csv", mode="w", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerows(data)
 
     @classmethod
     def load_from_file(cls):
