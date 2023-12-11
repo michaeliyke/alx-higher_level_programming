@@ -23,10 +23,35 @@ class Base:
         turtle.bgcolor("black")
         t = turtle.Turtle()
         colors = ["red", "dark red"]
-        for num in range(400):
-            t.forward(num+1)
-            t.right(89)
-            t.pencolor(colors[num % 2])
+        for rec in list_rectangles:
+            t.penup()
+            t.goto(rec.x, rec.y)
+            t.pendown()
+            t.pencolor(colors[1])
+            t.forward(rec.width)
+            t.right(90)
+            t.forward(rec.height)
+            t.right(90)
+            t.forward(rec.width)
+            t.right(90)
+            t.forward(rec.height)
+            t.right(90)
+
+        # t.penup()
+        # t.goto(20, 100)
+        for sq in list_squares:
+            t.penup()
+            t.goto(sq.x, sq.y)
+            t.pendown()
+            t.pencolor(colors[1])
+            t.forward(sq.size)
+            t.right(90)
+            t.forward(sq.size)
+            t.right(90)
+            t.forward(sq.size)
+            t.right(90)
+            t.forward(sq.size)
+            t.right(90)
         turtle.done()
 
     @classmethod
