@@ -132,6 +132,7 @@ $
 - Language: SQL
 - OS: Ubuntu 20.04 LTS
 - Interpreter: MySQL 8.0
+- [Style](https://www.sqlstyle.guide/)
 
 ### Files
 

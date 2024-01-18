@@ -5,7 +5,7 @@ CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password
 ```
 
 ```sql
-``GRANT`` privilege [,privilege],..
+GRANT privilege [,privilege],..
 ON privilege_level
 TO account_name;
 ```

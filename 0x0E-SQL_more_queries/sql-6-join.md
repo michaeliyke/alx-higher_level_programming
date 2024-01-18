@@ -3,7 +3,7 @@
 
 &nbsp; <!-- blank line -->
 
-## Basic query operation: the join
+## [Basic query operation: the join](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php)
 
 In most queries, we will want to see data from two or more tables. To do this, we need to `join` the tables in a way that matches up the right information from each one to the other—in our example, listing all of the customer data along with all of the order data for the orders that each customer has placed. In the latest SQL standard, the join is specified in the FROM clause:
 
@@ -46,6 +46,11 @@ The RA join of two relations, r over scheme R and s over scheme S, is written r 
 - You might want to visualize the three possible results of the paste operation using the graphic representation of schemes and tuples that we presented in an earlier page.
 
 ![RA syntax diagram](./join3.gif)
+
+#### References
+
+- [A beginner's guide to 7 types of SQL JOINs](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html)
+- [Basic query operation: the join](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php)
 
 <!-- markdownlint-disable-next-line -->
 #### Credits
