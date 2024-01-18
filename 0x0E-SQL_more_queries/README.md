@@ -238,23 +238,23 @@ $
 
 > Each file contains the solution to a task in the project.
 
-- 0-list_databases.sql
-- 1-create_database_if_missing.sql
-- 2-remove_database.sql
-- 3-list_tables.sql
-- 4-first_table.sql
-- 5-full_table.sql
-- 6-list_values.sql
-- 7-insert_value.sql
-- 8-count_89.sql
-- 9-full_creation.sql
-- 10-top_score.sql
-- 11-best_score.sql
-- 12-no_cheating.sql
-- 13-change_class.sql
-- 14-average.sql
-- 15-groups.sql
-- 16-no_link.sql
+- 0-privileges.sql
+- 1-create_user.sql
+- 10-genre_id_by_show.sql
+- 11-genre_id_all_shows.sql
+- 12-no_genre.sql
+- 13-count_shows_by_genre.sql
+- 14-my_genres.sql
+- 15-comedy_only.sql
+- 16-shows_by_genre.sql
+- 2-create_read_user.sql
+- 3-force_name.sql
+- 4-never_empty.sql
+- 5-unique_id.sql
+- 6-states.sql
+- 7-cities.sql
+- 8-cities_of_california_subquery.sql
+- 9-cities_by_state_join.sql
 
 #### Credits
 
