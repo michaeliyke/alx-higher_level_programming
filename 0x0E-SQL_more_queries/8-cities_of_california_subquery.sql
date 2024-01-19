@@ -1,8 +1,5 @@
 -- list all the cities of California that can be found in the hbtn_0d_usa db.
--- use the right db
-USE `hbtn_0d_usa`;
-
--- Display all cities in California
+-- Display all cities in California from the states and cities tables
 SELECT
 	id,
 	name
