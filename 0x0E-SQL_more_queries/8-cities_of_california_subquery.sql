@@ -4,7 +4,7 @@ USE `hbtn_0d_usa`;
 -- Display all cities in California
 SELECT id, name FROM `cities`
 WHERE state_id = (
-	SELECT id as state_id FROM `states` 
+	SELECT id AS state_id FROM `states` 
 	WHERE name = 'California'
 	)
 ORDER BY id ASC;
