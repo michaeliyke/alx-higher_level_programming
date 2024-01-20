@@ -1,6 +1,3 @@
--- switch to the db
-USE hbtn_0d_usa;
-
 -- uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
 SELECT
 	name
