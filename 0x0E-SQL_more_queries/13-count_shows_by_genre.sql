@@ -1,4 +1,5 @@
 -- lists all genres from hbtn_0d_tvshows and displays the number of shows linked to each.
+-- List all columns to be printed
 SELECT
 	genres.name AS genre,
 	COUNT(shows.title) AS number_of_shows
@@ -12,7 +13,6 @@ GROUP BY -- G_ROU_P by one of the non-agregated coluns
 	genre
 ORDER BY -- O_DE_R as directed
 	number_of_shows DESC;
-
 /*
 	Here, there are three tables to work with, tv_shows, tv_show_genres, and tv_genres.
 	shows - id, title, etc
