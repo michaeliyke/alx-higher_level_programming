@@ -12,12 +12,13 @@ ORDER BY
 	title ASC, genre_id ASC;
 
 /* FOR THE RECORD: BELOW CODE ACHIEVS SAME
-SELECT 
+S_ELEC_T 
 	title, genre_id
-FROM 
+F_RO_M 
 	tv_shows
-LEFT JOIN
+L_EF_T JOIN
 	tv_show_genres ON tv_shows.id = tv_show_genres.show_id
-ORDER BY
+O_RDE_R BY
 	title ASC, genre_id ASC;
  */
+ 
