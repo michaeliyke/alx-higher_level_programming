@@ -3,13 +3,13 @@ USE hbtn_0d_usa;
 
 -- uses the hbtn_0d_tvshows database to list all genres not linked to the show Dexter
 SELECT
-	genres.name AS name
+	name
 FROM
-	tv_genres AS genres
+	tv_genres
 WHERE
-	genres.name NOT IN (
+	name NOT IN (
 		SELECT
-			genres.name
+			name
 		FROM
 			tv_genres AS genres
 		LEFT JOIN
@@ -17,7 +17,7 @@ WHERE
 		LEFT JOIN
 			tv_shows AS shows ON shows.id = show_genres.show_id
 		WHERE
-			shows.title = "Dexter"
+			shows.title = 'Dexter'
 	)
 GROUP BY name
-ORDER BY genres.name ASC;
+ORDER BY name ASC;
