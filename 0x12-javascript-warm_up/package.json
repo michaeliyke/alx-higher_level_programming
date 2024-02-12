@@ -1,0 +1,9 @@
+{
+	"name": "0x12-javascript-warm_up",
+	"devDependencies": {
+		"semistandard": "*"
+	},
+	"scripts": {
+		"lint": "semistandard"
+	}
+}
