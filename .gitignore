@@ -12,7 +12,7 @@ d
 bug
 tm
 chk
-
+t/
 
 
 # Ignore compiled object files and executables
