@@ -23,11 +23,12 @@ function getOldMaxInt (ints) {
 
   for (const int of ints) {
     if (int > maxInt) { /* Only chage maxInt if a lager int if found */
-      oldMaxInt = maxInt !== Number.MIN_SAFE_INTEGER ? maxInt : undefined;
+      oldMaxInt = maxInt;
       maxInt = int; /* Only set oldMaxInt when maxInt is being set */
-    } else if (int > oldMaxInt) { /* Here int is half-way between both */
+    } else if (int > oldMaxInt && int !== maxInt) {
+      /* Here int is half-way between both */
       oldMaxInt = int;
     }
   }
-  return (oldMaxInt === Number.MIN_SAFE_INTEGER ? maxInt : oldMaxInt);
+  return (oldMaxInt === maxInt ? undefined : oldMaxInt);
 }
