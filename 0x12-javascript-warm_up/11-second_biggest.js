@@ -19,13 +19,15 @@ if (state === 1) {
 
 function getOldMaxInt (ints) {
   let maxInt = Number.MIN_SAFE_INTEGER;
-  let oldMaxInt;
+  let oldMaxInt = Number.MIN_SAFE_INTEGER;
 
   for (const int of ints) {
     if (int > maxInt) { /* Only chage maxInt if a lager int if found */
       oldMaxInt = maxInt !== Number.MIN_SAFE_INTEGER ? maxInt : undefined;
       maxInt = int; /* Only set oldMaxInt when maxInt is being set */
+    } else if (int > oldMaxInt) { /* Here int is half-way between both */
+      oldMaxInt = int;
     }
   }
-  return (oldMaxInt === undefined ? maxInt : oldMaxInt);
+  return (oldMaxInt === Number.MIN_SAFE_INTEGER ? maxInt : oldMaxInt);
 }
