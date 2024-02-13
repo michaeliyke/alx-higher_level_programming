@@ -1,4 +1,4 @@
-# JavaScript
+# 0x12. JavaScript - Warm up
 
 ![Make file gif](./t/giphy-2.gif)
 
