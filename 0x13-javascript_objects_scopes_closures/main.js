@@ -1,7 +1,14 @@
 #!/usr/bin/node
-const Square = require('./6-square');
+const Rectangle = require('./4-rectangle');
 
-const s1 = new Square(4);
-s1.charPrint();
+const r1 = new Rectangle(2, 3);
+console.log('Normal:');
+r1.print();
 
-s1.charPrint('C');
+console.log('Double:');
+r1.double();
+r1.print();
+
+console.log('Rotate:');
+r1.rotate();
+r1.print();
