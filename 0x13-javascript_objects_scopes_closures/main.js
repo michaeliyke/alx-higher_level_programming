@@ -1,6 +1,5 @@
 #!/usr/bin/node
-const logMe = require('./9-logme').logMe;
+const esrever = require('./8-esrever').esrever;
 
-logMe('Hello');
-logMe('Best');
-logMe('School');
+console.log(esrever([1, 2, 3, 4, 5]));
+console.log(esrever(["School", 89, { id: 12 }, "String"]));
