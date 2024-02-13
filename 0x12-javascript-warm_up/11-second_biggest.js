@@ -27,5 +27,5 @@ function getOldMaxInt (ints) {
       maxInt = int; /* Only set oldMaxInt when maxInt is being set */
     }
   }
-  return (oldMaxInt);
+  return (oldMaxInt === undefined ? maxInt : oldMaxInt);
 }
