@@ -7,7 +7,7 @@ console.log(myObject);
 
 myObject.incr = function inc () {
   this.value += 1;
-};
+}.bind(myObject);
 
 myObject.incr();
 console.log(myObject);
