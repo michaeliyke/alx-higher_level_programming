@@ -1,5 +1,6 @@
 #!/usr/bin/node
 module.exports = class Rectangle {
+  printChar = 'X';
   constructor (w, h) {
     if (isNaN(w) || isNaN(h)) return;
     if (w < 1 || h < 1) return;
@@ -13,7 +14,7 @@ module.exports = class Rectangle {
       let width = '';
 
       for (let j = 0; j < this.width; j++) {
-        width += 'X';
+        width += this.printChar;
       }
 
       console.log(width);
