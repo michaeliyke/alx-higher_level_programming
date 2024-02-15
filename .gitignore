@@ -99,3 +99,4 @@ test-results/
 vendor/
 node_modules/
 examples/
+venv/
