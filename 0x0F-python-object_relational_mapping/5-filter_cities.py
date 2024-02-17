@@ -6,7 +6,7 @@ if __name__ == "__main__":
     from sys import argv as args
 
     if len(args) < 5:
-        exit(0)
+        exit(1)
     state = args[4]
     details = dict(
         host="localhost", port=3306, user=args[1],
