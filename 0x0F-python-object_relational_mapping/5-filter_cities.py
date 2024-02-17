@@ -25,14 +25,7 @@ if __name__ == "__main__":
         """
     cur.execute(query, (state,))
     query_rows = list(cur.fetchall())
-    i = 0
-    size = len(query_rows)
-    for row in query_rows:
-        if row and i < size - 1:
-            print(row[0], end=", ")
-        else:
-            print(row[0])
-        i += 1
+    print(", ".join(row[0] for row in query_rows))
 
     cur.close()
     conn.close()
