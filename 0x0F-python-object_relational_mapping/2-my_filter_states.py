@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """State Selecting module"""
 # ./2-my_filter_states.py michael aka hbtn_0e_0_usa 'Arizona'
-if __name__ == '__main__':
+if __name__ == "__main__":
     import MySQLdb
     from sys import argv as args
 
