@@ -100,3 +100,5 @@ vendor/
 node_modules/
 examples/
 venv/
+bak
+unbak
