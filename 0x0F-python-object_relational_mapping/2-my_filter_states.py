@@ -13,11 +13,12 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(host="localhost", port=3306, user=user,
                            passwd=password, db=db, charset="utf8")
     cur = conn.cursor()
-    # HERE I have to know SQL to grab all states in my database
+
     cur.execute(
         "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(name))
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if row:
+            print(row)
     cur.close()
     conn.close()
