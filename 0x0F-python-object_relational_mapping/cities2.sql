@@ -1,20 +1,17 @@
--- Create states table in hbtn_0e_4_usa with some data
-CREATE DATABASE IF NOT EXISTS hbtn_0e_4_usa;
-USE hbtn_0e_4_usa;
--- Create the states table
+-- Create database hbtn_0e_14_usa, tables states and cities + some data
+CREATE DATABASE IF NOT EXISTS hbtn_0e_14_usa;
+USE hbtn_0e_14_usa;
 CREATE TABLE IF NOT EXISTS states (
 	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(256) NOT NULL,
 	PRIMARY KEY (id)
 );
--- insert sample data to into states table
 INSERT INTO states (name)
 VALUES ("California"),
 	("Arizona"),
 	("Texas"),
 	("New York"),
 	("Nevada");
--- create the cities table
 CREATE TABLE IF NOT EXISTS cities (
 	id INT NOT NULL AUTO_INCREMENT,
 	state_id INT NOT NULL,
@@ -22,7 +19,6 @@ CREATE TABLE IF NOT EXISTS cities (
 	PRIMARY KEY (id),
 	FOREIGN KEY(state_id) REFERENCES states(id)
 );
--- insert sample data into cities
 INSERT INTO cities (state_id, name)
 VALUES (1, "San Francisco"),
 	(1, "San Jose"),
