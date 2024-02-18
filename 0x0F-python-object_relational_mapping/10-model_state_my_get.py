@@ -3,7 +3,7 @@
 script that prints the State object with the name passed as argument
 """
 if __name__ == "__main__":
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, collate
     from sqlalchemy.orm import Session
     from model_state import State, Base
     from sys import argv
@@ -18,5 +18,6 @@ if __name__ == "__main__":
     session = Session(engine)
     query = session.query(State).order_by(State.id)
     for state in query.filter(State.name == argv[4]).all():
-        print("{}: {}".format(state.id, state.name))
+        if state.name == argv[4]:
+            print("{}: {}".format(state.id, state.name))
     session.close()
