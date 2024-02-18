@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
- script that prints the first State object from the database hbtn_0e_6_usa
+script that prints the State object with the name passed as argument
 """
 if __name__ == "__main__":
     from sqlalchemy import create_engine
@@ -8,7 +8,7 @@ if __name__ == "__main__":
     from model_state import State, Base
     from sys import argv
 
-    # ./9-model_state_filter_a.py michael aka hbtn_0e_4_usa
+    # ./10-model_state_my_get.py michael aka hbtn_0e_4_usa Texas
 
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    query = session.query(State).filter(State.name.like('%a%'))
-    for state in query.order_by(State.id).all():
+    query = session.query(State).order_by(State.id)
+    for state in query.filter(State.name == argv[4]).all():
         print("{}: {}".format(state.id, state.name))
     session.close()
