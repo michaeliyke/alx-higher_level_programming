@@ -7,7 +7,7 @@ if __name__ == "__main__":
     from sys import argv
     from model_city import City
 
-    # ./14-model_city_fetch_by_state.py michael aka hbtn_0e_4_usa
+    # ./100-relationship_states_cities.py michael aka hbtn_0e_4_usa
 
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'
