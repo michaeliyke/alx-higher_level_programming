@@ -10,7 +10,6 @@ if __name__ == "__main__":
     import urllib.parse
     import urllib.error
     import sys
-    import http.client
 
     data = urllib.parse.urlencode({'email': sys.argv[2]})
     request = urllib.request.Request(
