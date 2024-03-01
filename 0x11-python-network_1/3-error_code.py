@@ -10,14 +10,10 @@ if __name__ == "__main__":
     import urllib.parse
     import urllib.error
     import sys
-    import http.client
 
     data = urllib.parse.urlencode({'email': sys.argv[2]})
-    request = urllib.request.Request(
-        url=sys.argv[1], data=data.encode('ascii'), method="POST"
-    )
+    opts = tuple(url=sys.argv[1], data=data.encode('ascii'), method="POST")
+    request = urllib.request.Request(*opts)
 
-    with urllib.request.urlopen(request) as res:
-        byte_arr = res.read()
-        str_ = byte_arr.decode("utf-8")
-        print(str)
+    with urllib.request.urlopen(sys.argv[1]) as res:
+        print()
