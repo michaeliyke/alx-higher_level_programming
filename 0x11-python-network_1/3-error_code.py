@@ -11,9 +11,11 @@ if __name__ == "__main__":
     import urllib.error
     import sys
 
-    data = urllib.parse.urlencode({'email': sys.argv[2]})
-    opts = tuple(url=sys.argv[1], data=data.encode('ascii'), method="POST")
-    request = urllib.request.Request(*opts)
+    request = urllib.request.Request(sys.argv[1])
 
-    with urllib.request.urlopen(sys.argv[1]) as res:
-        print()
+    try:
+        with urllib.request.urlopen(request) as res:
+            out = res.read().decode("utf-8")
+            print(out)
+    except urllib.error.HTTPError as err:
+        print(f"Error code: {err.code}")
