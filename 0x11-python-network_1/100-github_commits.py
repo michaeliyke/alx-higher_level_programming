@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Interview question"""
 if __name__ == "__main__":
     import sys
     import requests
