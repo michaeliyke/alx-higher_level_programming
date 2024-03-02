@@ -3,8 +3,8 @@
 if __name__ == "__main__":
     import sys
     import requests
-    OWNER = sys.argv[1]
-    REPO = sys.argv[2]
+    OWNER = sys.argv[2]
+    REPO = sys.argv[1]
 
     url = f"https://api.github.com/repos/{OWNER}/{REPO}/commits"
     res = requests.get(url, params={"per_page": 10})
