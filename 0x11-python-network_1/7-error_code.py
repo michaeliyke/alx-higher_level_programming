@@ -9,8 +9,7 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    data = {'email': sys.argv[2]}
-    res = requests.post(sys.argv[1], data=data)
+    res = requests.post(sys.argv[1])
     if res.status_code >= 400:
         print("Error code: ".format(res.status_code))
     else:
