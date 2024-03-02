@@ -6,11 +6,20 @@ if __name__ == "__main__":
     OWNER = sys.argv[1]
     REPO = sys.argv[2]
 
-    u = f"https://api.github.com/repos/{OWNER}/{REPO}/commits"
-    params = {"per_page": 10, "sort": "author-date-asc"}
-    res = requests.get(u, params=params)
-    o = res.json()
-    if o:
-        for e in o:
-            print("{}: {}".format(e.get("sha"), e.get(
-                "commit").get("author").get("name")))
+    url = f"https://api.github.com/repos/{OWNER}/{REPO}/commits"
+    res = requests.get(url, params={"per_page": 10})
+    commits = res.json()
+    if not commits:
+        exit(0)
+
+    for obj in commits:
+        sha = obj.get("sha")
+        c = obj.get("commit")
+        if not c:
+            continue
+        author = c.get("author")
+        if not author:
+            continue
+        # date = author.get("date")
+        name = author.get("name")
+        print("{}: {}".format(sha, name))
