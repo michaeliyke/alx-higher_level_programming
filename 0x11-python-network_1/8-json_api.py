@@ -13,7 +13,7 @@ if __name__ == "__main__":
     import sys
 
     data = {"q": sys.argv[1]} if len(sys.argv) > 1 else {"q": ""}
-    res = requests.get("http://0.0.0.0:5000/search_user", params=data)
+    res = requests.post("http://0.0.0.0:5000/search_user", params=data)
 
     try:
         obj = res.json()  # Will raise ValueError if not JSON
