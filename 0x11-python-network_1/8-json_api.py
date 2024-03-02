@@ -18,7 +18,7 @@ if __name__ == "__main__":
     try:
         obj = res.json()  # Will raise ValueError if not JSON
 
-        if "id" in obj and "name" in obj:
+        if obj:
             print("[{}] {}".format(obj.get("id"), res.get("name")))
         else:
             print("No result")
