@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-options = {
+const options = {
   headers: {
     'User-Agent': 'request'
   },
