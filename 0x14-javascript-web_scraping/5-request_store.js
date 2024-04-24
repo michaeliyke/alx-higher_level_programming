@@ -17,7 +17,7 @@ function handler (error, response, body) {
     return;
   }
 
-  fs.writeFile('store', body, (err) => {
+  fs.writeFile(process.argv[3], body, 'utf-8', (err) => {
     if (err) {
       console.error(err);
     }
