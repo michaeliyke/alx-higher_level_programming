@@ -1,6 +1,23 @@
 #!/usr/bin/node
 const request = require('request');
 
+// Function that makes request and returns the parsed JSON object with Promise
+function makeRequest (options) {
+  return new Promise((resolve, reject) => {
+    request(options, (error, response, body) => {
+      if (error) {
+        reject(error);
+      } else {
+        try {
+          resolve(JSON.parse(body));
+        } catch (parseError) {
+          reject(parseError);
+        }
+      }
+    });
+  });
+}
+
 const options = {
   headers: {
     'User-Agent': 'request'
@@ -8,22 +25,30 @@ const options = {
   url: 'https://swapi-api.alx-tools.com/api/films/'
 };
 
-request(options, handler);
+async function check () {
+  try {
+    const films = await makeRequest(options);
 
-function handler (error, response, body) {
-  if (error) {
-    console.error(error);
-    return;
-  }
-
-  const films = JSON.parse(body).results;
-  let count = 0;
-
-  for (const film of films) {
-    if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-      count++;
-      // console.log(film.title);
+    let count = 0;
+    const characterPromises = [];
+    for (const film of films.results) {
+      for (const characterUrl of film.characters) {
+        options.url = characterUrl;
+        characterPromises.push(makeRequest(options));
+      }
     }
+
+    const characters = await Promise.all(characterPromises);
+
+    for (const info of characters) {
+      if (info.name === 'Wedge Antilles') {
+        count++;
+      }
+    }
+    console.log(count);
+  } catch (error) {
+    console.log(error);
   }
-  console.log(count);
 }
+
+check();
