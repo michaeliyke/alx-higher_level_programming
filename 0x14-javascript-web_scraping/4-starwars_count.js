@@ -2,7 +2,7 @@
 const request = require('request');
 
 // Function that makes request and returns the parsed JSON object with Promise
-function makeRequest(options) {
+function makeRequest (options) {
   return new Promise((resolve, reject) => {
     request(options, (error, response, body) => {
       if (error) {
@@ -25,7 +25,7 @@ const options = {
   url: process.argv[2]
 };
 
-async function check() {
+async function check () {
   try {
     const films = await makeRequest(options);
 
