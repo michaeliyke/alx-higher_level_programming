@@ -2,7 +2,7 @@
 const request = require('request');
 
 // Function that makes request and returns the parsed JSON object with Promise
-function makeRequest(options) {
+function makeRequest (options) {
   return new Promise((resolve, reject) => {
     request(options, (error, response, body) => {
       if (error) {
@@ -22,13 +22,13 @@ const options = {
   headers: {
     'User-Agent': 'request'
   },
-  url: 'https://jsonplaceholder.typicode.com/todos',
+  url: process.argv[2],
   method: 'GET'
 };
 
 const completedTasks = {};
 
-async function check() {
+async function check () {
   try {
     for (const todo of await makeRequest(options)) {
       const uid = String(todo.userId);
@@ -41,18 +41,16 @@ async function check() {
   } catch (error) {
     console.log(error);
   }
-
 }
 
 // Function that increments the completed tasks for the user
-function increment(uid) {
+function increment (uid) {
   if (uid in completedTasks) {
     completedTasks[uid]++;
   } else {
     completedTasks[uid] = 1;
   }
 }
-
 
 check().then(() => {
   console.log(completedTasks);
