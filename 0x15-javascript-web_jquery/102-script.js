@@ -1,7 +1,6 @@
 const jQuery = $;
 
 jQuery(function ($) {
-
   $('INPUT#btn_translate').click(() => {
     let lang = $('INPUT#language_code').val();
     if (lang === '') {
@@ -12,7 +11,5 @@ jQuery(function ($) {
     $.get(url, ({ hello }) => {
       $('DIV#hello').text(hello);
     });
-
   });
-
 });

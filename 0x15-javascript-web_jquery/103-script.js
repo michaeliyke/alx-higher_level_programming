@@ -1,7 +1,6 @@
 const jQuery = $;
 
 jQuery(function ($) {
-
   $('INPUT#btn_translate').click(translate);
 
   $(document).keypress((event) => {
@@ -9,11 +8,9 @@ jQuery(function ($) {
       $('INPUT#btn_translate').trigger('click');
     }
   });
-
 });
 
-
-function translate() {
+function translate () {
   let lang = $('INPUT#language_code').val();
   if (lang === '') {
     lang = 'en-US';
