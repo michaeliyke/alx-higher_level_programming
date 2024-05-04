@@ -1,12 +1,14 @@
 const jQuery = $;
 
 jQuery(function ($) {
-  fetch('https://swapi-api.alx-tools.com/api/people/5/?format=json')
+  fetch('https://swapi-api.alx-tools.com/api/films/?format=json')
     .then((response) => {
       const responsePromise = response.json();
       return responsePromise;
-    }).then((res) => {
-      $('DIV#character').text(res.name);
+    }).then(({ results: movies }) => {
+      for (const movie of movies) {
+        $('UL#list_movies').append(`<li>${movie.title}</li>`);
+      }
     })
     .catch((error) => {
       console.error('Error:', error);
